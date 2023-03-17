@@ -1,2 +1,9 @@
 const TTAppName = 'TikTak';
-const baseUrl = 'https://iqonic.design/themeforest-images/Mimik';
+const baseUrl =
+    'https://instagram.fbkk22-2.fna.fbcdn.net/o1/v/t16/f1/m82/4A4E887B69C3B4C65286D67EA673B9B0_video_dashinit.mp4?efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uNzIwLmNsaXBzLmJhc2VsaW5lIn0&_nc_ht=instagram.fbkk22-2.fna.fbcdn.net&_nc_cat=105&vs=524983666412457_2790104752&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC80QTRFODg3QjY5QzNCNEM2NTI4NkQ2N0VBNjczQjlCMF92aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVABgkR0xrY2d4S1JyLXFzTmNFQkFGSWFhamJtbFI1eGJwUjFBQUFGFQICyAEAKAAYABsAFQAAJpyyopu6jMtAFQIoAkMzLBdAJyHKwIMSbxgSZGFzaF9iYXNlbGluZV8xX3YxEQB1%2FgcA&ccb=9-4&oh=00_AfCh7w6f0vn1SGdEReqPOP5BRa4JytC3IOZeEh20iwe2KA&oe=6415E2A8&_nc_sid=2be895';
+
+const baseUrl2 =
+    'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-with-a-cold-and-pale-appearance-39877-large.mp4';
+const baseUrl3 =
+    // eslint-disable-next-line max-len
+    'https://instagram.fbkk22-4.fna.fbcdn.net/o1/v/t16/f1/m82/07409BF40CD7A472B139B29547C998B7_video_dashinit.mp4?efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uNDMyLmNsaXBzLmJhc2VsaW5lIn0&_nc_ht=instagram.fbkk22-4.fna.fbcdn.net&_nc_cat=109&vs=743146757342618_127469840&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC8wNzQwOUJGNDBDRDdBNDcyQjEzOUIyOTU0N0M5OThCN192aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVABgkR0g5ZFFnZTBrUGdCYmRVVkFIVnBiRmNzdUEwX2JwUjFBQUFGFQICyAEAKAAYABsAFQAAJoC%2F1Zad4YpAFQIoAkMzLBdALt2yLQ5WBBgSZGFzaF9iYXNlbGluZV8yX3YxEQB1%2FgcA&ccb=9-4&oh=00_AfBjKGfneUhmvCGlOwnAmopoIp9TeVjLGUk5V9gcYv2Y5Q&oe=6416314F&_nc_sid=218533#t=0.01';

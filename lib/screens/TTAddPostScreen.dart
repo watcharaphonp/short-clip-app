@@ -168,7 +168,7 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
           children: [
             Row(
               children: [
-                Icon(Icons.close, color: white).onTap(() {
+                Icon(Icons.close, color: grey).onTap(() {
                   TTDashboardScreen().launch(context);
                 }),
                 16.width,

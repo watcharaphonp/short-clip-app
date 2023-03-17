@@ -12,7 +12,8 @@ class TTSplashScreen extends StatefulWidget {
   TTSplashScreenState createState() => TTSplashScreenState();
 }
 
-class TTSplashScreenState extends State<TTSplashScreen> with AfterLayoutMixin<TTSplashScreen> {
+class TTSplashScreenState extends State<TTSplashScreen>
+    with AfterLayoutMixin<TTSplashScreen> {
   @override
   void initState() {
     super.initState();
@@ -54,9 +55,7 @@ class TTSplashScreenState extends State<TTSplashScreen> with AfterLayoutMixin<TT
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("images/tikTok/tt_ic_logo.png", height: 60, width: 60),
-          8.height,
-          Text(TTAppName, style: boldTextStyle(size: 25, color: Colors.white)),
+          Image.asset("images/tikTok/smo-black.png", height: 150, width: 150),
         ],
       ).center(),
     );
