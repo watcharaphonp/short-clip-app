@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:path_provider/path_provider.dart';
@@ -133,7 +133,9 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
           Center(
             child: _cameraPreviewWidget(),
           ),
-          Container(alignment: Alignment.bottomCenter, child: _captureControlRowWidget()),
+          Container(
+              alignment: Alignment.bottomCenter,
+              child: _captureControlRowWidget()),
           _topContent(),
           _rightContent()
         ],
@@ -170,7 +172,12 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
                   TTDashboardScreen().launch(context);
                 }),
                 16.width,
-                TTStepProgressIndicator(totalSteps: 10, currentStep: 2, selectedColor: TTColorRed, unselectedColor: Colors.grey).expand(),
+                TTStepProgressIndicator(
+                        totalSteps: 10,
+                        currentStep: 2,
+                        selectedColor: TTColorRed,
+                        unselectedColor: Colors.grey)
+                    .expand(),
                 16.width
               ],
             ),
@@ -184,7 +191,10 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
                   size: 16,
                 ),
                 8.width,
-                Text(mSong == null ? 'Pick a Song' : mSong, textAlign: TextAlign.center, style: primaryTextStyle(color: mSong == null ? white : Colors.yellow))
+                Text(mSong == null ? 'Pick a Song' : mSong,
+                    textAlign: TextAlign.center,
+                    style: primaryTextStyle(
+                        color: mSong == null ? white : Colors.yellow))
               ],
             ).onTap(() {
               _navigateAndDisplaySelection(context);
@@ -215,13 +225,18 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
         children: <Widget>[
           Image.asset(TT_ic_flash, width: 30, height: 30, color: Colors.grey),
           20.height,
-          Image.asset(TT_ic_effect, width: 30, height: 30, color: isEffect ? white : Colors.yellow).onTap(() {
+          Image.asset(TT_ic_effect,
+                  width: 30,
+                  height: 30,
+                  color: isEffect ? white : Colors.yellow)
+              .onTap(() {
             setState(() {
               isEffect = !isEffect;
             });
           }),
           20.height,
-          Image.asset(TT_ic_color, width: 30, height: 30, color: white).onTap(() {
+          Image.asset(TT_ic_color, width: 30, height: 30, color: white)
+              .onTap(() {
             toast("Color Filter");
           }),
           20.height,
@@ -229,11 +244,13 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
             _allowSheet(context);
           }),
           20.height,
-          Image.asset(TT_ic_mask, width: 30, height: 30, color: white).onTap(() {
+          Image.asset(TT_ic_mask, width: 30, height: 30, color: white)
+              .onTap(() {
             toast("Effect");
           }),
           20.height,
-          Image.asset(TT_ic_rotate_image, width: 30, height: 30, color: white).onTap(() async {
+          Image.asset(TT_ic_rotate_image, width: 30, height: 30, color: white)
+              .onTap(() async {
             initializeCamera(getCameDesc());
           }),
           20.height,
@@ -259,7 +276,8 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 16.height,
-                Text("Drag to set stop point", style: secondaryTextStyle(color: white)),
+                Text("Drag to set stop point",
+                    style: secondaryTextStyle(color: white)),
                 16.height,
                 RangeSlider(
                   values: _currentRangeValues,
@@ -282,8 +300,12 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
                         width: context.width(),
                         margin: EdgeInsets.only(bottom: 16),
                         padding: EdgeInsets.only(top: 6, bottom: 6),
-                        decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(4), backgroundColor: TTColorRed),
-                        child: Text('Set Countdown Timer', textAlign: TextAlign.center, style: primaryTextStyle(color: white)))
+                        decoration: boxDecorationWithRoundedCorners(
+                            borderRadius: BorderRadius.circular(4),
+                            backgroundColor: TTColorRed),
+                        child: Text('Set Countdown Timer',
+                            textAlign: TextAlign.center,
+                            style: primaryTextStyle(color: white)))
                     .onTap(() {
                   finish(context);
                 })
@@ -305,23 +327,35 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
             20.width,
             GestureDetector(
               onTap: () {
-                if (controller != null && controller!.value.isInitialized && !controller!.value.isRecordingVideo) {
+                if (controller != null &&
+                    controller!.value.isInitialized &&
+                    !controller!.value.isRecordingVideo) {
                   startVideoRecording().then((String? filePath) {
                     if (mounted) setState(() {});
                   });
                   startWatch();
                 }
               },
-              child: Container(decoration: BoxDecoration(shape: BoxShape.circle, color: white, border: Border.all(color: white, width: 1)), child: CircleAvatar(backgroundColor: TTColorRed, radius: 25)),
+              child: Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: white,
+                      border: Border.all(color: white, width: 1)),
+                  child: CircleAvatar(backgroundColor: TTColorRed, radius: 25)),
             ),
             20.width,
             Container(
-              decoration: BoxDecoration(shape: BoxShape.circle, color: white, border: Border.all(color: TTColorRed, width: 1)),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: white,
+                  border: Border.all(color: TTColorRed, width: 1)),
               child: IconButton(
                 icon: const Icon(Icons.stop),
                 color: TTColorRed,
                 onPressed: () {
-                  if (controller != null && controller!.value.isInitialized && controller!.value.isRecordingVideo) {
+                  if (controller != null &&
+                      controller!.value.isInitialized &&
+                      controller!.value.isRecordingVideo) {
                     stopVideoRecording().then((_) {
                       if (mounted) setState(() {});
                     });
@@ -338,7 +372,8 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
 
   String timestamp() => DateTime.now().millisecondsSinceEpoch.toString();
 
-  void logError(String code, String? message) => print('Error: $code\nError Message: $message');
+  void logError(String code, String? message) =>
+      print('Error: $code\nError Message: $message');
 
   Future<String?> startVideoRecording() async {
     if (!controller!.value.isInitialized) {
@@ -384,7 +419,8 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
   }
 
   Future<void> _startVideoPlayer() async {
-    final VideoPlayerController vcontroller = VideoPlayerController.file(File(videoPath));
+    final VideoPlayerController vcontroller =
+        VideoPlayerController.file(File(videoPath));
     videoPlayerListener = () {
       if (videoController != null && videoController!.value.size != null) {
         // Refreshing the state to update video player with the correct ratio.

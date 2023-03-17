@@ -48,21 +48,28 @@ class TTFollowingListScreenState extends State<TTFollowingListScreen> {
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(backgroundImage: AssetImage(mData.userImg), radius: 24),
+                      CircleAvatar(
+                          backgroundImage: AssetImage(mData.userImg),
+                          radius: 24),
                       10.width,
-                      Text(mData.name, style: primaryTextStyle(color: white), maxLines: 2),
+                      Text(mData.name,
+                          style: primaryTextStyle(color: white), maxLines: 2),
                     ],
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {
                       setState(() {
                         mData.isSelected = !mData.isSelected;
                       });
                     },
                     child: Container(
-                        decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(4), backgroundColor: mData.isSelected ? TTColorRed : Colors.grey),
+                        decoration: boxDecorationWithRoundedCorners(
+                            borderRadius: BorderRadius.circular(4),
+                            backgroundColor:
+                                mData.isSelected ? TTColorRed : Colors.grey),
                         padding: EdgeInsets.fromLTRB(16, 4, 16, 4),
-                        child: Text(mData.isSelected ? 'Follow' : 'Following', style: primaryTextStyle(color: white, size: 14))),
+                        child: Text(mData.isSelected ? 'Follow' : 'Following',
+                            style: primaryTextStyle(color: white, size: 14))),
                   ),
                 ],
               ).paddingOnly(left: 10, right: 10, top: 16);

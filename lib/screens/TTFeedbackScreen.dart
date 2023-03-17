@@ -37,25 +37,34 @@ class TTFeedbackScreenState extends State<TTFeedbackScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               16.height,
-              Text("If there is anything I can do for you to make your app experience better,I'll be glad to do so.", style: primaryTextStyle(color: white)),
+              Text(
+                  "If there is anything I can do for you to make your app experience better,I'll be glad to do so.",
+                  style: primaryTextStyle(color: white)),
               16.height,
               ttEditTextStyle("Please write your concern here"),
               26.height,
-              Text("Contact Information", style: primaryTextStyle(color: white)),
+              Text("Contact Information",
+                  style: primaryTextStyle(color: white)),
               8.height,
               ttEditTextStyle("Your Email Address"),
               16.height,
-              ttEditTextStyle("Your Phone Number", keyboardType: TextInputType.phone),
+              ttEditTextStyle("Your Phone Number",
+                  keyboardType: TextInputType.phone),
               24.height,
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   toast("Submit");
                   finish(context);
                 },
                 child: Container(
-                    padding: EdgeInsets.only(top: 6, bottom: 6, left: 20, right: 20),
-                    decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(4), backgroundColor: TTColorRed),
-                    child: Text('Submit', textAlign: TextAlign.center, style: primaryTextStyle(color: white))),
+                    padding:
+                        EdgeInsets.only(top: 6, bottom: 6, left: 20, right: 20),
+                    decoration: boxDecorationWithRoundedCorners(
+                        borderRadius: BorderRadius.circular(4),
+                        backgroundColor: TTColorRed),
+                    child: Text('Submit',
+                        textAlign: TextAlign.center,
+                        style: primaryTextStyle(color: white))),
               ).center(),
             ],
           ).paddingAll(10),

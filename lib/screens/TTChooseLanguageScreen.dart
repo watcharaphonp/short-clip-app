@@ -11,7 +11,16 @@ class TTChooseLanguageScreen extends StatefulWidget {
 }
 
 class TTChooseLanguageScreenState extends State<TTChooseLanguageScreen> {
-  List<String> programmingList = ["हिंदी", "मराठी", "ਪੰਜਾਬੀ", "ગુજરાતી", "English", "বাংলা", "اُردُو", "français"];
+  List<String> programmingList = [
+    "हिंदी",
+    "मराठी",
+    "ਪੰਜਾਬੀ",
+    "ગુજરાતી",
+    "English",
+    "বাংলা",
+    "اُردُو",
+    "français"
+  ];
 
   List<String> selectedProgrammingList = [];
 
@@ -48,7 +57,7 @@ class TTChooseLanguageScreenState extends State<TTChooseLanguageScreen> {
               },
             ).paddingOnly(left: 8, right: 8),
             Align(
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   toast("Save");
                   finish(context);
@@ -57,8 +66,12 @@ class TTChooseLanguageScreenState extends State<TTChooseLanguageScreen> {
                     margin: EdgeInsets.only(top: 16, bottom: 16),
                     padding: EdgeInsets.only(top: 6, bottom: 6),
                     width: context.width(),
-                    decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(4), backgroundColor: TTColorRed),
-                    child: Text('Save', textAlign: TextAlign.center, style: primaryTextStyle(color: white))),
+                    decoration: boxDecorationWithRoundedCorners(
+                        borderRadius: BorderRadius.circular(4),
+                        backgroundColor: TTColorRed),
+                    child: Text('Save',
+                        textAlign: TextAlign.center,
+                        style: primaryTextStyle(color: white))),
               ).paddingAll(16),
             )
           ],
@@ -97,7 +110,9 @@ class _MultiSelectChipState extends State<MultiSelectChip> {
           selected: selectedChoices.contains(item),
           onSelected: (selected) {
             setState(() {
-              selectedChoices.contains(item) ? selectedChoices.remove(item) : selectedChoices.add(item);
+              selectedChoices.contains(item)
+                  ? selectedChoices.remove(item)
+                  : selectedChoices.add(item);
               widget.onSelectionChanged!(selectedChoices);
             });
           },

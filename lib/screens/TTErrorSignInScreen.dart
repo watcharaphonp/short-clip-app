@@ -38,16 +38,19 @@ class TTErrorSignInScreenState extends State<TTErrorSignInScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(TT_ic_person_face, width: 50, height: 50, color: white),
+                Image.asset(TT_ic_person_face,
+                    width: 50, height: 50, color: white),
                 16.height,
-                Text("Sign in to your profile", style: primaryTextStyle(color: white)),
+                Text("Sign in to your profile",
+                    style: primaryTextStyle(color: white)),
                 4.height,
-                Text("Sign in & follow profiles to see their videos here", style: secondaryTextStyle(color: white)),
+                Text("Sign in & follow profiles to see their videos here",
+                    style: secondaryTextStyle(color: white)),
               ],
             ).center(),
             Align(
               alignment: Alignment.bottomCenter,
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   TTSignINScreen().launch(context);
                 },
@@ -55,8 +58,12 @@ class TTErrorSignInScreenState extends State<TTErrorSignInScreen> {
                     width: context.width(),
                     margin: EdgeInsets.only(bottom: 16),
                     padding: EdgeInsets.only(top: 6, bottom: 6),
-                    decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(4), backgroundColor: TTColorRed),
-                    child: Text('Sign In', textAlign: TextAlign.center, style: primaryTextStyle(color: white))),
+                    decoration: boxDecorationWithRoundedCorners(
+                        borderRadius: BorderRadius.circular(4),
+                        backgroundColor: TTColorRed),
+                    child: Text('Sign In',
+                        textAlign: TextAlign.center,
+                        style: primaryTextStyle(color: white))),
               ),
             ),
           ],

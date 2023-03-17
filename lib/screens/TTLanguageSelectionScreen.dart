@@ -33,7 +33,7 @@ class TTLanguageSelectionState extends State<TTLanguageSelection> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Image.asset(TT_icBackgroundLanguage, height: context.height(), fit: BoxFit.cover, width: context.width()).opacity(opacity: 0.75));
+    return Container();
   }
 }
 
@@ -43,7 +43,16 @@ class LanguageDialog extends StatefulWidget {
 }
 
 class LanguageDialogState extends State<LanguageDialog> {
-  final List<String> mLanguageList = ["हिंदी", "English", "मराठी", "ਪੰਜਾਬੀ", "ગુજરાતી", "বাংলা", "اُردُو", "français"];
+  final List<String> mLanguageList = [
+    "हिंदी",
+    "English",
+    "मराठी",
+    "ਪੰਜਾਬੀ",
+    "ગુજરાતી",
+    "বাংলা",
+    "اُردُو",
+    "français"
+  ];
   bool? isChecked = false;
 
   @override
@@ -67,7 +76,10 @@ class LanguageDialogState extends State<LanguageDialog> {
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         child: Container(
-          decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.deepOrangeAccent, width: 4), borderRadius: BorderRadius.all(Radius.circular(16.0))),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.deepOrangeAccent, width: 4),
+              borderRadius: BorderRadius.all(Radius.circular(16.0))),
           child: Container(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -82,8 +94,12 @@ class LanguageDialogState extends State<LanguageDialog> {
                   itemBuilder: (context, index) {
                     return Container(
                       margin: EdgeInsets.all(8),
-                      decoration:
-                          boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(10), boxShadow: defaultBoxShadow(shadowColor: shadowColorGlobal), backgroundColor: Colors.grey.shade200, border: Border.all(color: Colors.white, width: 2)),
+                      decoration: boxDecorationWithRoundedCorners(
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow:
+                              defaultBoxShadow(shadowColor: shadowColorGlobal),
+                          backgroundColor: Colors.grey.shade200,
+                          border: Border.all(color: Colors.white, width: 2)),
                       child: Text(
                         mLanguageList[index],
                         style: primaryTextStyle(),
@@ -92,7 +108,11 @@ class LanguageDialogState extends State<LanguageDialog> {
                       TTDashboardScreen().launch(context);
                     });
                   },
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 4, crossAxisSpacing: 16, childAspectRatio: 2.0),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 4,
+                      crossAxisSpacing: 16,
+                      childAspectRatio: 2.0),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

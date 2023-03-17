@@ -38,17 +38,20 @@ class TTOtpScreenState extends State<TTOtpScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Enter OTP', style: boldTextStyle(color: white, size: 18)),
+                  Text('Enter OTP',
+                      style: boldTextStyle(color: white, size: 18)),
                   16.height,
-                  PinEntryTextField(fields: 6, showFieldAsBox: true, fontSize: 16),
+                  PinEntryTextField(
+                      fields: 6, showFieldAsBox: true, fontSize: 16),
                   16.height,
-                  Text('Resend OTP', style: boldTextStyle(color: TTColorRed, size: 18)),
+                  Text('Resend OTP',
+                      style: boldTextStyle(color: TTColorRed, size: 18)),
                   16.height,
                 ],
               ).center(),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     TTDashboardScreen().launch(context);
                   },
@@ -56,8 +59,12 @@ class TTOtpScreenState extends State<TTOtpScreen> {
                       width: context.width(),
                       margin: EdgeInsets.only(bottom: 16),
                       padding: EdgeInsets.only(top: 6, bottom: 6),
-                      decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(4), backgroundColor: TTColorRed),
-                      child: Text('Submit', textAlign: TextAlign.center, style: primaryTextStyle(color: white))),
+                      decoration: boxDecorationWithRoundedCorners(
+                          borderRadius: BorderRadius.circular(4),
+                          backgroundColor: TTColorRed),
+                      child: Text('Submit',
+                          textAlign: TextAlign.center,
+                          style: primaryTextStyle(color: white))),
                 ),
               ),
             ],
