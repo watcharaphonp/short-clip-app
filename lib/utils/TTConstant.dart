@@ -1,9 +1,9 @@
 const TTAppName = 'TikTak';
 const baseUrl =
-    'https://instagram.fbkk22-4.fna.fbcdn.net/v/t66.30100-16/44598480_144814715189795_2722905860770163349_n.mp4?_nc_ht=instagram.fbkk22-4.fna.fbcdn.net&_nc_cat=111&_nc_ohc=xq4zqaSefWMAX9F5QwJ&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfCB38kGiS7IjITXowE33onlm1Xwg397BOO0vEBgfUPDNw&oe=6425C615&_nc_sid=4f375e';
+    'https://v16-webapp-prime.tiktok.com/video/tos/alisg/tos-alisg-pve-0037c001/oUT8oI0UzabsQAqrwhtLAYQWLfNMBxACOI7I2i/?a=1988&ch=0&cr=0&dr=0&lr=tiktok_m&cd=0%7C0%7C1%7C0&cv=1&br=2738&bt=1369&cs=0&ds=3&ft=_RwJrBYpq8ZmoCSQCc_vjerd_AhLrus&mime_type=video_mp4&qs=0&rc=ZTpkZGU8NjY6PGYzNjc1Z0BpamU7bTs6ZnQ0aTMzODczNEAuNi1eLV4yNi4xYS4vNmBeYSNxazAzcjRfYGVgLS1kMS1zcw%3D%3D&btag=80000&expire=1680104813&l=20230329094642D952F78F8047350E14D3&ply_type=2&policy=2&signature=1ef1e5081bd3e1283fb2c9763bed6524&tk=tt_chain_token';
 
 const baseUrl2 =
     'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-with-a-cold-and-pale-appearance-39877-large.mp4';
 const baseUrl3 =
     // eslint-disable-next-line max-len
-    'https://instagram.fbkk22-4.fna.fbcdn.net/v/t66.30100-16/44598480_144814715189795_2722905860770163349_n.mp4?_nc_ht=instagram.fbkk22-4.fna.fbcdn.net&_nc_cat=111&_nc_ohc=xq4zqaSefWMAX9F5QwJ&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfCB38kGiS7IjITXowE33onlm1Xwg397BOO0vEBgfUPDNw&oe=6425C615&_nc_sid=4f375e';
+    'https://v16-webapp-prime.tiktok.com/video/tos/alisg/tos-alisg-pve-0037c001/oUT8oI0UzabsQAqrwhtLAYQWLfNMBxACOI7I2i/?a=1988&ch=0&cr=0&dr=0&lr=tiktok_m&cd=0%7C0%7C1%7C0&cv=1&br=2738&bt=1369&cs=0&ds=3&ft=_RwJrBYpq8ZmoCSQCc_vjerd_AhLrus&mime_type=video_mp4&qs=0&rc=ZTpkZGU8NjY6PGYzNjc1Z0BpamU7bTs6ZnQ0aTMzODczNEAuNi1eLV4yNi4xYS4vNmBeYSNxazAzcjRfYGVgLS1kMS1zcw%3D%3D&btag=80000&expire=1680104813&l=20230329094642D952F78F8047350E14D3&ply_type=2&policy=2&signature=1ef1e5081bd3e1283fb2c9763bed6524&tk=tt_chain_token';
