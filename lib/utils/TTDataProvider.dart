@@ -26,7 +26,7 @@ List<TTStoryModel> getStoryData() {
       "55K",
       "555",
       "100",
-      "$baseUrl/tikTok/tt_video1.mp4",
+      "$baseUrl2/tikTok/tt_video1.mp4",
       TT_ic_user,
       TT_ic_user1));
   mList.add(TTStoryModel(
@@ -59,7 +59,7 @@ List<TTStoryModel> getStoryData() {
       "Atif",
       "555",
       "100",
-      "$baseUrl/tikTok/tt_video4.mp4",
+      "$baseUrl2/tikTok/tt_video4.mp4",
       TT_ic_user1,
       TT_ic_user2));
   return mList;
