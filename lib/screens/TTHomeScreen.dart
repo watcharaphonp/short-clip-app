@@ -15,6 +15,7 @@ class TTHomeScreen extends StatefulWidget {
 
 class TTHomeScreenState extends State<TTHomeScreen> {
   var mStoryList = getStoryData();
+  var shortClipList;
 
   @override
   void initState() {
@@ -22,7 +23,11 @@ class TTHomeScreenState extends State<TTHomeScreen> {
     init();
   }
 
-  init() async {}
+  init() async {
+    final result = await getShortClipData();
+    shortClipList = result;
+    // print(shortClipList[0]);
+  }
 
   @override
   void setState(fn) {

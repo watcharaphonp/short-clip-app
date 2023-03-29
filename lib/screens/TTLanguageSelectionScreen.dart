@@ -93,6 +93,7 @@ class LanguageDialogState extends State<LanguageDialog> {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return Container(
+                      height: 20,
                       margin: EdgeInsets.all(8),
                       decoration: boxDecorationWithRoundedCorners(
                           borderRadius: BorderRadius.circular(10),

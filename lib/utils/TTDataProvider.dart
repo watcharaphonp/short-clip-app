@@ -1,14 +1,67 @@
+import 'dart:convert';
 import 'package:tiktok/model/TTModel.dart';
 import 'package:tiktok/utils/TTConstant.dart';
+import 'package:http/http.dart' as http;
 
 import 'TTImages.dart';
 
+Future<dynamic> getShortClipData() async {
+  var url =
+      'https://dev.platform.smo.live/api/v1.2/streams?status=active&type=liveconcert&type=livestream&type=replay&type=liveparty&_sort=stream_started_at:DESC';
+
+  // Await the http get response, then decode the json-formatted response.
+  var response = await http.get(Uri.parse(url));
+  var responseData = json.decode(response.body);
+
+  return responseData;
+}
+
 List<TTStoryModel> getStoryData() {
   List<TTStoryModel> mList = [];
-  mList.add(TTStoryModel("@Lee_", "Fun With Friends", "#BFF#Enjoy#FriendForEver", "Atif", "55K", "555", "100", "$baseUrl/tikTok/tt_video1.mp4", TT_ic_user, TT_ic_user1));
-  mList.add(TTStoryModel("@John_Smith_", "Fun With Friends", "#BFF#Enjoy#FriendForEver", "55K", "Atif", "555", "100", "$baseUrl2/tikTok/tt_video2.mp4", TT_ic_user1, TT_ic_user2));
-  mList.add(TTStoryModel("@Paul_", "Fun With Friends", "#BFF#Enjoy#FriendForEver", "55K", "Atif", "555", "100", "$baseUrl3/tikTok/tt_video3.mp4", TT_ic_user2, TT_ic_user));
-  mList.add(TTStoryModel("@JohnSmith_", "Fun With Friends", "#BFF#Enjoy#FriendForEver", "55K", "Atif", "555", "100", "$baseUrl/tikTok/tt_video4.mp4", TT_ic_user1, TT_ic_user2));
+  mList.add(TTStoryModel(
+      "@Lee_",
+      "Fun With Friends",
+      "#BFF#Enjoy#FriendForEver",
+      "Atif",
+      "55K",
+      "555",
+      "100",
+      "$baseUrl/tikTok/tt_video1.mp4",
+      TT_ic_user,
+      TT_ic_user1));
+  mList.add(TTStoryModel(
+      "@John_Smith_",
+      "Fun With Friends",
+      "#BFF#Enjoy#FriendForEver",
+      "55K",
+      "Atif",
+      "555",
+      "100",
+      "$baseUrl2/tikTok/tt_video2.mp4",
+      TT_ic_user1,
+      TT_ic_user2));
+  mList.add(TTStoryModel(
+      "@Paul_",
+      "Fun With Friends",
+      "#BFF#Enjoy#FriendForEver",
+      "55K",
+      "Atif",
+      "555",
+      "100",
+      "$baseUrl3/tikTok/tt_video3.mp4",
+      TT_ic_user2,
+      TT_ic_user));
+  mList.add(TTStoryModel(
+      "@JohnSmith_",
+      "Fun With Friends",
+      "#BFF#Enjoy#FriendForEver",
+      "55K",
+      "Atif",
+      "555",
+      "100",
+      "$baseUrl/tikTok/tt_video4.mp4",
+      TT_ic_user1,
+      TT_ic_user2));
   return mList;
 }
 
@@ -26,12 +79,30 @@ List<TTAccountModel> getAccountData() {
 
 List<TTAccountModel> getAccount() {
   List<TTAccountModel> mList = [];
-  mList.add(TTAccountModel("https://media.giphy.com/media/VIoW7Fncu19GKDrQsX/giphy.gif", "50", TT_ic_user));
-  mList.add(TTAccountModel("https://media.giphy.com/media/i1ryib8WmQE6vObauh/giphy.gif", "50", TT_ic_user5));
-  mList.add(TTAccountModel("https://media.giphy.com/media/28zHRxnVsGxFnYiq4d/giphy.gif", "150", TT_ic_user1));
-  mList.add(TTAccountModel("https://media.giphy.com/media/ZbUIi5RuPahtCN90OL/giphy.gif", "30", TT_ic_user2));
-  mList.add(TTAccountModel("https://media.giphy.com/media/mGK1g88HZRa2FlKGbz/giphy.gif", "50", TT_ic_user3));
-  mList.add(TTAccountModel("https://media.giphy.com/media/qvbX0UeDy9xDCwuQoW/giphy.gif", "50", TT_ic_user4));
+  mList.add(TTAccountModel(
+      "https://media.giphy.com/media/VIoW7Fncu19GKDrQsX/giphy.gif",
+      "50",
+      TT_ic_user));
+  mList.add(TTAccountModel(
+      "https://media.giphy.com/media/i1ryib8WmQE6vObauh/giphy.gif",
+      "50",
+      TT_ic_user5));
+  mList.add(TTAccountModel(
+      "https://media.giphy.com/media/28zHRxnVsGxFnYiq4d/giphy.gif",
+      "150",
+      TT_ic_user1));
+  mList.add(TTAccountModel(
+      "https://media.giphy.com/media/ZbUIi5RuPahtCN90OL/giphy.gif",
+      "30",
+      TT_ic_user2));
+  mList.add(TTAccountModel(
+      "https://media.giphy.com/media/mGK1g88HZRa2FlKGbz/giphy.gif",
+      "50",
+      TT_ic_user3));
+  mList.add(TTAccountModel(
+      "https://media.giphy.com/media/qvbX0UeDy9xDCwuQoW/giphy.gif",
+      "50",
+      TT_ic_user4));
   return mList;
 }
 
@@ -55,7 +126,8 @@ List<TTNotificationModel> getNotificationData() {
   List<TTNotificationModel> mList = [];
   mList.add(TTNotificationModel("New DIY hairstyle 🤣🤣", "1h", TT_ic_user1));
   mList.add(TTNotificationModel("Hy there...!!", "3h", TT_ic_user2));
-  mList.add(TTNotificationModel("VIRAL! Did he just jump out off a MARVEL movie?", "3h", TT_ic_user3));
+  mList.add(TTNotificationModel(
+      "VIRAL! Did he just jump out off a MARVEL movie?", "3h", TT_ic_user3));
   mList.add(TTNotificationModel("New Challenge 🤣", "3h", TT_ic_user5));
   return mList;
 }

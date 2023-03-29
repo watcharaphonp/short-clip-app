@@ -23,11 +23,13 @@ class TTStoryComponent extends StatefulWidget {
   }
 }
 
-class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerProviderStateMixin {
+class TTStoryComponentState extends State<TTStoryComponent>
+    with SingleTickerProviderStateMixin {
   bool play = true;
   late VideoPlayerController _controller;
   late AnimationController animationController;
-  PageController pageController = PageController(initialPage: 0, viewportFraction: 0.8);
+  PageController pageController =
+      PageController(initialPage: 0, viewportFraction: 0.8);
   PageController mController = new PageController();
 
   @override
@@ -37,8 +39,10 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
   }
 
   init() async {
-    animationController = new AnimationController(vsync: this, duration: new Duration(seconds: 5));
+    animationController = new AnimationController(
+        vsync: this, duration: new Duration(seconds: 5));
     animationController.repeat();
+    print(widget.model!.videoPath);
     _controller = VideoPlayerController.network(widget.model!.videoPath)
       ..initialize().then((value) {
         _controller.play();
@@ -73,7 +77,8 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
           children: <Widget>[
             Text(widget.model!.name, style: primaryTextStyle(color: white)),
             8.height,
-            Text(widget.model!.message + " " + widget.model!.tag, style: primaryTextStyle(color: white)),
+            Text(widget.model!.message + " " + widget.model!.tag,
+                style: primaryTextStyle(color: white)),
             8.height,
             Container(
               width: context.width() - 60,
@@ -85,7 +90,8 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
                     width: 80,
                     child: Marquee(
                       textDirection: TextDirection.ltr,
-                      child: Text('Original Sound' + " " + widget.model!.sound, style: primaryTextStyle(color: white)),
+                      child: Text('Original Sound' + " " + widget.model!.sound,
+                          style: primaryTextStyle(color: white)),
                     ),
                   ),
                 ],
@@ -114,12 +120,26 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      decoration: BoxDecoration(shape: BoxShape.circle, color: black, border: Border.all(color: white, width: 1)),
-                      child: CircleAvatar(radius: 20, backgroundColor: black, backgroundImage: AssetImage(widget.model!.profile)),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: black,
+                          border: Border.all(color: white, width: 1)),
+                      child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: black,
+                          backgroundImage: AssetImage(widget.model!.profile)),
                     ),
                     Align(
                       alignment: Alignment.bottomCenter,
-                      child: Container(width: 20, height: 20, decoration: BoxDecoration(shape: BoxShape.circle, color: TTColorRed, border: Border.all(color: TTColorRed, width: 1)), child: Center(child: Icon(Icons.add, size: 16, color: white))),
+                      child: Container(
+                          width: 20,
+                          height: 20,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: TTColorRed,
+                              border: Border.all(color: TTColorRed, width: 1)),
+                          child: Center(
+                              child: Icon(Icons.add, size: 16, color: white))),
                     )
                   ],
                 ),
@@ -127,7 +147,9 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
             ),
             16.height,
             IconButton(
-                icon: Icon(Icons.favorite, size: 35, color: widget.model!.isFavourite ? TTColorRed : white),
+                icon: Icon(Icons.favorite,
+                    size: 35,
+                    color: widget.model!.isFavourite ? TTColorRed : white),
                 onPressed: () {
                   setState(() {
                     widget.model!.isFavourite = !widget.model!.isFavourite;
@@ -135,7 +157,11 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
                 }),
             Text(widget.model!.like, style: primaryTextStyle(color: white)),
             10.height,
-            Transform(alignment: Alignment.center, transform: Matrix4.rotationY(math.pi), child: Icon(Icons.reply, size: 35, color: white)).onTap(() {
+            Transform(
+                    alignment: Alignment.center,
+                    transform: Matrix4.rotationY(math.pi),
+                    child: Icon(Icons.reply, size: 35, color: white))
+                .onTap(() {
               setState(() {
                 onShareTap(context);
               });
@@ -149,13 +175,16 @@ class TTStoryComponentState extends State<TTStoryComponent> with SingleTickerPro
                 width: 45,
                 height: 45,
                 padding: EdgeInsets.all(8),
-                child: CircleAvatar(radius: 16, backgroundImage: AssetImage(widget.model!.musicImg)),
+                child: CircleAvatar(
+                    radius: 16,
+                    backgroundImage: AssetImage(widget.model!.musicImg)),
               ).onTap(() {
                 if (_controller.value.isPlaying) _controller.pause();
                 TTSoundScreen().launch(context);
               }),
               builder: (context, _widget) {
-                return Transform.rotate(angle: animationController.value * 6.3, child: _widget);
+                return Transform.rotate(
+                    angle: animationController.value * 6.3, child: _widget);
               },
             )
           ],
