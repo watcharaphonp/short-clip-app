@@ -13,7 +13,8 @@ class TTStoryScreen extends StatefulWidget {
   TTStoryScreenState createState() => TTStoryScreenState();
 }
 
-class TTStoryScreenState extends State<TTStoryScreen> with SingleTickerProviderStateMixin {
+class TTStoryScreenState extends State<TTStoryScreen>
+    with SingleTickerProviderStateMixin {
   var mStoryList = getStoryData();
 
   @override

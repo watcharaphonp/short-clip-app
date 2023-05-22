@@ -147,7 +147,9 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
     final size = MediaQuery.of(context).size;
     final deviceRatio = size.width / size.height;
     if (controller == null || !controller!.value.isInitialized) {
-      return Container();
+      return Container(
+        color: TTColorBlack,
+      );
     } else {
       return Transform.scale(
         scale: controller!.value.aspectRatio / deviceRatio,
@@ -339,7 +341,7 @@ class TTAddPostScreenState extends State<TTAddPostScreen> {
               child: Container(
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: white,
+                      color: Colors.red,
                       border: Border.all(color: white, width: 1)),
                   child: CircleAvatar(backgroundColor: TTColorRed, radius: 25)),
             ),
