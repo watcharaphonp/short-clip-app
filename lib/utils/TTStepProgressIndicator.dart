@@ -2,7 +2,7 @@ library step_progress_indicator;
 
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
 
 /// (Linear) Progress indicator made of a series of steps
 ///

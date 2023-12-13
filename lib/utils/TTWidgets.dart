@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share/share.dart';
 import 'package:tiktok/utils/TTColors.dart';

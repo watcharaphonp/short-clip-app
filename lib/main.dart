@@ -1,5 +1,5 @@
 import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
 import 'package:tiktok/screens/TTSplashScreen.dart';
 
 late List<CameraDescription> cameras;
