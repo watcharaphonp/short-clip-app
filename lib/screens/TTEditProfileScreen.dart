@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/utils/TTColors.dart';
 import 'package:tiktok/utils/TTImages.dart';
@@ -46,9 +46,13 @@ class TTEditProfileScreenState extends State<TTEditProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               16.height,
-              CircleAvatar(backgroundImage: AssetImage(TT_ic_guest2), radius: 45).center(),
+              CircleAvatar(
+                      backgroundImage: AssetImage(TT_ic_guest2), radius: 45)
+                  .center(),
               10.height,
-              Text('Add Photo', style: boldTextStyle(color: TTColorRed, size: 18)).center(),
+              Text('Add Photo',
+                      style: boldTextStyle(color: TTColorRed, size: 18))
+                  .center(),
               TextFormField(
                 style: primaryTextStyle(size: 14, color: white),
                 cursorColor: white,
@@ -63,9 +67,12 @@ class TTEditProfileScreenState extends State<TTEditProfileScreen> {
                     size: 14,
                   ),
                   labelStyle: primaryTextStyle(color: white),
-                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
-                  border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white24)),
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white24)),
+                  border: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white24)),
                 ),
               ),
               20.height,
@@ -77,9 +84,12 @@ class TTEditProfileScreenState extends State<TTEditProfileScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('@lee', style: boldTextStyle(color: white, size: 16)),
+                      Text('@lee',
+                          style: boldTextStyle(color: white, size: 16)),
                       8.height,
-                      Text("Username is your unique identify on tiktok. Once you change it. you don\'t be able to change again within 30 days", style: secondaryTextStyle(color: white)),
+                      Text(
+                          "Username is your unique identify on tiktok. Once you change it. you don\'t be able to change again within 30 days",
+                          style: secondaryTextStyle(color: white)),
                       8.height,
                       Divider(color: Colors.white54)
                     ],
@@ -103,9 +113,12 @@ class TTEditProfileScreenState extends State<TTEditProfileScreen> {
                     size: 14,
                   ),
                   labelStyle: primaryTextStyle(color: white),
-                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
-                  border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white24)),
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white24)),
+                  border: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white24)),
                 ),
               ),
             ],

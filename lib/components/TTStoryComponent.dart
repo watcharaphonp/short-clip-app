@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/model/TTModel.dart';

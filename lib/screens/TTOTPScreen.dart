@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/rendering.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/screens/TTDashboardScreen.dart';

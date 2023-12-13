@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/model/TTModel.dart';
 import 'package:tiktok/utils/TTColors.dart';
@@ -47,7 +47,8 @@ class TTSearchInfoScreenState extends State<TTSearchInfoScreen> {
 
     return Scaffold(
       backgroundColor: black,
-      appBar: ttAppBar(context, "#itelHaiToLifeMagical") as PreferredSizeWidget?,
+      appBar:
+          ttAppBar(context, "#itelHaiToLifeMagical") as PreferredSizeWidget?,
       floatingActionButton: FloatingActionButton(
         backgroundColor: TTColorRed,
         child: Icon(Icons.videocam_rounded, color: white),
@@ -57,7 +58,8 @@ class TTSearchInfoScreenState extends State<TTSearchInfoScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(TT_ic_banner1, height: 160, width: context.width(), fit: BoxFit.fill),
+            Image.asset(TT_ic_banner1,
+                height: 160, width: context.width(), fit: BoxFit.fill),
             20.height,
             Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
                     style: primaryTextStyle(color: white))
@@ -85,7 +87,9 @@ class TTSearchInfoScreenState extends State<TTSearchInfoScreen> {
                     Container(
                       height: 200,
                       width: context.width(),
-                      child: FittedBox(child: commonCacheImageWidget(mData.post), fit: BoxFit.fill),
+                      child: FittedBox(
+                          child: commonCacheImageWidget(mData.post),
+                          fit: BoxFit.fill),
                     ),
                     Container(
                       padding: EdgeInsets.only(bottom: 8, left: 8, right: 16),
@@ -94,11 +98,23 @@ class TTSearchInfoScreenState extends State<TTSearchInfoScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
-                            children: [Icon(Icons.favorite_border, color: white, size: 16), 4.width, Text(mData.like, style: primaryTextStyle(color: white))],
+                            children: [
+                              Icon(Icons.favorite_border,
+                                  color: white, size: 16),
+                              4.width,
+                              Text(mData.like,
+                                  style: primaryTextStyle(color: white))
+                            ],
                           ),
                           Container(
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: black, border: Border.all(color: white, width: 1)),
-                            child: CircleAvatar(radius: 10, backgroundColor: black, backgroundImage: AssetImage(mData.user)),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: black,
+                                border: Border.all(color: white, width: 1)),
+                            child: CircleAvatar(
+                                radius: 10,
+                                backgroundColor: black,
+                                backgroundImage: AssetImage(mData.user)),
                           )
                         ],
                       ),
@@ -108,7 +124,11 @@ class TTSearchInfoScreenState extends State<TTSearchInfoScreen> {
                   TTStoryScreen().launch(context);
                 });
               },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 2.0, crossAxisSpacing: 2.0, childAspectRatio: 1.2),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 2.0,
+                  crossAxisSpacing: 2.0,
+                  childAspectRatio: 1.2),
             )
           ],
         ),

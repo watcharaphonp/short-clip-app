@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/screens/TTErrorSignInScreen.dart';
 
@@ -33,11 +33,17 @@ class TTStoryHeaderComponentState extends State<TTStoryHeaderComponent> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Following', style: boldTextStyle(color: white, size: 18)).paddingRight(16).onTap(() {
+            Text('Following', style: boldTextStyle(color: white, size: 18))
+                .paddingRight(16)
+                .onTap(() {
               TTErrorSignInScreen().launch(context);
             }),
-            Container(decoration: BoxDecoration(shape: BoxShape.circle, color: white), width: 6, height: 6),
-            Text('For You', style: boldTextStyle(color: white, size: 18)).paddingLeft(16)
+            Container(
+                decoration: BoxDecoration(shape: BoxShape.circle, color: white),
+                width: 6,
+                height: 6),
+            Text('For You', style: boldTextStyle(color: white, size: 18))
+                .paddingLeft(16)
           ],
         ).paddingAll(16),
       ),

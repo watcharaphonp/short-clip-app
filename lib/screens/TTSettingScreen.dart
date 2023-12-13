@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/screens/TTChooseLanguageScreen.dart';
 import 'package:tiktok/screens/TTDashboardScreen.dart';
@@ -42,7 +42,11 @@ class TTSettingScreenState extends State<TTSettingScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
-            children: [Icon(icon, color: white), 10.width, Text(value, style: primaryTextStyle(color: white))],
+            children: [
+              Icon(icon, color: white),
+              10.width,
+              Text(value, style: primaryTextStyle(color: white))
+            ],
           ),
           Icon(Icons.chevron_right, color: white),
         ],
@@ -75,7 +79,8 @@ class TTSettingScreenState extends State<TTSettingScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Notification", style: primaryTextStyle(color: white)),
+                            Text("Notification",
+                                style: primaryTextStyle(color: white)),
                             Switch(
                               value: isSwitched,
                               onChanged: (value) {
@@ -90,7 +95,9 @@ class TTSettingScreenState extends State<TTSettingScreen> {
                             ),
                           ],
                         ),
-                        Text("If you disable notification,you won't get latest updates from your followers.", style: secondaryTextStyle(color: Colors.white54)),
+                        Text(
+                            "If you disable notification,you won't get latest updates from your followers.",
+                            style: secondaryTextStyle(color: Colors.white54)),
                       ],
                     ).expand(),
                   ],
@@ -102,7 +109,8 @@ class TTSettingScreenState extends State<TTSettingScreen> {
                 mOption(Icons.feedback, "Feedback").onTap(() {
                   TTFeedbackScreen().launch(context);
                 }),
-                mOption(Icons.star_border, "Rate" + " " + TTAppName).onTap(() async {
+                mOption(Icons.star_border, "Rate" + " " + TTAppName)
+                    .onTap(() async {
                   const url = 'https://www.google.com';
                   if (await canLaunch(url)) {
                     await launch(url);
@@ -110,7 +118,8 @@ class TTSettingScreenState extends State<TTSettingScreen> {
                     throw 'Could not launch $url';
                   }
                 }),
-                mOption(Icons.share_outlined, "Share" + " " + TTAppName).onTap(() {
+                mOption(Icons.share_outlined, "Share" + " " + TTAppName)
+                    .onTap(() {
                   onShareTap(context);
                 }),
                 mOption(Icons.info_outline, "About Us").onTap(() {
@@ -118,7 +127,8 @@ class TTSettingScreenState extends State<TTSettingScreen> {
                 }),
                 Divider(color: Colors.white24).paddingOnly(left: 16, right: 16),
                 mOption(Icons.logout, "Logout").onTap(() async {
-                  bool? res = await showConfirmDialog(context, 'Do you want to logout?');
+                  bool? res = await showConfirmDialog(
+                      context, 'Do you want to logout?');
                   if (res ?? false) {
                     TTDashboardScreen().launch(context);
                   }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/model/TTModel.dart';
 import 'package:tiktok/screens/TTStoryScreen.dart';
@@ -55,14 +55,20 @@ class TTProfileComponentState extends State<TTProfileComponent> {
                 padding: EdgeInsets.only(bottom: 8, left: 8),
                 alignment: Alignment.bottomLeft,
                 child: Row(
-                  children: [Icon(Icons.favorite_border, color: white, size: 16), 4.width, Text(mAccountList[index].like, style: primaryTextStyle(color: white))],
+                  children: [
+                    Icon(Icons.favorite_border, color: white, size: 16),
+                    4.width,
+                    Text(mAccountList[index].like,
+                        style: primaryTextStyle(color: white))
+                  ],
                 ),
               ),
             ],
           ),
         );
       },
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 2.0, mainAxisSpacing: 2.0),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3, crossAxisSpacing: 2.0, mainAxisSpacing: 2.0),
     );
   }
 }

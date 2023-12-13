@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/utils/TTColors.dart';
 import 'package:tiktok/utils/TTConstant.dart';
@@ -39,15 +39,20 @@ class TTAboutUsScreenState extends State<TTAboutUsScreen> {
             children: [
               Text(TTAppName, style: primaryTextStyle(color: white)),
               16.height,
-              Text("For more information please visit:", style: primaryTextStyle(color: white)),
-              Text("Yourfriend@" + TTAppName + "@.com", style: primaryTextStyle(color: TTColorSerpent)),
+              Text("For more information please visit:",
+                  style: primaryTextStyle(color: white)),
+              Text("Yourfriend@" + TTAppName + "@.com",
+                  style: primaryTextStyle(color: TTColorSerpent)),
               16.height,
               Text("Client ID:", style: primaryTextStyle(color: white)),
-              Text("28375-64f658-452414474099", style: primaryTextStyle(color: white)),
+              Text("28375-64f658-452414474099",
+                  style: primaryTextStyle(color: white)),
               16.height,
-              Text("Terms of Use", style: primaryTextStyle(color: TTColorSerpent)),
+              Text("Terms of Use",
+                  style: primaryTextStyle(color: TTColorSerpent)),
               16.height,
-              Text("Privacy Policy", style: primaryTextStyle(color: TTColorSerpent)),
+              Text("Privacy Policy",
+                  style: primaryTextStyle(color: TTColorSerpent)),
             ],
           ).paddingAll(10),
         ),

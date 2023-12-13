@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/model/TTModel.dart';
 import 'package:tiktok/utils/TTColors.dart';
@@ -51,7 +51,11 @@ class TTPickSongScreenState extends State<TTPickSongScreen> {
                     child: TextFormField(
                       maxLines: 1,
                       style: primaryTextStyle(color: white),
-                      decoration: InputDecoration(border: InputBorder.none, hintStyle: primaryTextStyle(color: white), labelStyle: primaryTextStyle(color: white), hintText: 'Search'),
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintStyle: primaryTextStyle(color: white),
+                          labelStyle: primaryTextStyle(color: white),
+                          hintText: 'Search'),
                     ),
                   ),
                 ],
@@ -73,20 +77,27 @@ class TTPickSongScreenState extends State<TTPickSongScreen> {
                     });
                   },
                   child: Container(
-                    color: mData.isSelected ? TTColorRed.withOpacity(0.2) : black,
+                    color:
+                        mData.isSelected ? TTColorRed.withOpacity(0.2) : black,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
                           children: [
-                            CircleAvatar(backgroundImage: AssetImage(mData.img), radius: 24),
+                            CircleAvatar(
+                                backgroundImage: AssetImage(mData.img),
+                                radius: 24),
                             10.width,
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(mData.name, style: primaryTextStyle(color: white), maxLines: 2),
-                                Text(mData.name, style: primaryTextStyle(color: Colors.white24)),
+                                Text(mData.name,
+                                    style: primaryTextStyle(color: white),
+                                    maxLines: 2),
+                                Text(mData.name,
+                                    style: primaryTextStyle(
+                                        color: Colors.white24)),
                               ],
                             ),
                           ],

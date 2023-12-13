@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/model/TTModel.dart';
 import 'package:tiktok/screens/TTSearchInfoScreen.dart';
@@ -29,8 +29,10 @@ class TTSearchScreenState extends State<TTSearchScreen> {
 
   init() async {
     pages = [
-      Container(child: Image.asset(TT_ic_banner2, height: 90, fit: BoxFit.cover)),
-      Container(child: Image.asset(TT_ic_banner1, height: 90, fit: BoxFit.cover)),
+      Container(
+          child: Image.asset(TT_ic_banner2, height: 90, fit: BoxFit.cover)),
+      Container(
+          child: Image.asset(TT_ic_banner1, height: 90, fit: BoxFit.cover)),
     ];
   }
 
@@ -55,7 +57,8 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                   Container(
                     height: 50,
                     width: context.width() - 80,
-                    decoration: boxDecoration(bgColor: Colors.white10, radius: 10),
+                    decoration:
+                        boxDecoration(bgColor: Colors.white10, radius: 10),
                     child: Row(
                       children: [
                         10.width,
@@ -65,7 +68,11 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                           child: TextFormField(
                             maxLines: 1,
                             style: primaryTextStyle(color: white),
-                            decoration: InputDecoration(border: InputBorder.none, hintStyle: primaryTextStyle(color: white), labelStyle: primaryTextStyle(color: white), hintText: 'Search'),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintStyle: primaryTextStyle(color: white),
+                                labelStyle: primaryTextStyle(color: white),
+                                hintText: 'Search'),
                           ),
                         ),
                       ],
@@ -102,7 +109,9 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                               indicatorColor: white,
                               onDotTap: (index) {
                                 selectedIndex = index;
-                                pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.linear);
+                                pageController.animateToPage(index,
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.linear);
                                 setState(() {});
                               },
                             ),
@@ -132,16 +141,24 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                                   children: [
                                     Container(
                                       padding: EdgeInsets.all(12),
-                                      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white10),
-                                      child: Text("#", style: primaryTextStyle(size: 22, color: white)),
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.white10),
+                                      child: Text("#",
+                                          style: primaryTextStyle(
+                                              size: 22, color: white)),
                                     ),
                                     8.width,
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text(mSearchList[index].message, style: boldTextStyle(color: white)),
+                                        Text(mSearchList[index].message,
+                                            style: boldTextStyle(color: white)),
                                         4.height,
-                                        Text("Treading HashTag", style: primaryTextStyle(color: white)),
+                                        Text("Treading HashTag",
+                                            style:
+                                                primaryTextStyle(color: white)),
                                       ],
                                     )
                                   ],
@@ -151,9 +168,12 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                                     TTSearchInfoScreen().launch(context);
                                   },
                                   child: Container(
-                                    decoration: boxDecoration(bgColor: Colors.white10),
+                                    decoration:
+                                        boxDecoration(bgColor: Colors.white10),
                                     padding: EdgeInsets.fromLTRB(8, 2, 8, 2),
-                                    child: Text(mSearchList[index].view + " >", style: primaryTextStyle(color: white, size: 14)),
+                                    child: Text(mSearchList[index].view + " >",
+                                        style: primaryTextStyle(
+                                            color: white, size: 14)),
                                   ),
                                 )
                               ],
@@ -175,7 +195,8 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                                       height: 140,
                                       width: 130,
                                       child: FittedBox(
-                                        child: commonCacheImageWidget(mSliderImages[index]),
+                                        child: commonCacheImageWidget(
+                                            mSliderImages[index]),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
@@ -184,7 +205,8 @@ class TTSearchScreenState extends State<TTSearchScreen> {
                               ),
                             ),
                             8.height,
-                            Divider(color: Colors.white10).paddingOnly(left: 10, right: 10),
+                            Divider(color: Colors.white10)
+                                .paddingOnly(left: 10, right: 10),
                             8.height,
                           ],
                         );

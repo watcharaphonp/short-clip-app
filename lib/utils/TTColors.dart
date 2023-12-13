@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 
 const TTColorSerpent = Color(0xFF69C9D0);
 const TTColorRed = Color(0xFFEE1D52);

@@ -2,7 +2,7 @@ library step_progress_indicator;
 
 import 'dart:math';
 
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 
 /// (Linear) Progress indicator made of a series of steps
 ///
@@ -191,9 +191,12 @@ class TTStepProgressIndicator extends StatelessWidget {
     this.padding = 2.0,
     this.fallbackLength = 100.0,
     Key? key,
-  })  : assert(totalSteps > 0, "Number of total steps (totalSteps) of the StepProgressIndicator must be greater than 0"),
-        assert(currentStep >= 0, "Current step (currentStep) of the StepProgressIndicator must be greater than or equal to 0"),
-        assert(padding >= 0.0, "Padding (padding) of the StepProgressIndicator must be greater or equal to 0"),
+  })  : assert(totalSteps > 0,
+            "Number of total steps (totalSteps) of the StepProgressIndicator must be greater than 0"),
+        assert(currentStep >= 0,
+            "Current step (currentStep) of the StepProgressIndicator must be greater than or equal to 0"),
+        assert(padding >= 0.0,
+            "Padding (padding) of the StepProgressIndicator must be greater or equal to 0"),
         super(key: key);
 
   @override
@@ -231,7 +234,8 @@ class TTStepProgressIndicator extends StatelessWidget {
 
   /// Apply a [Row] when the [direction] of the indicator is [Axis.horizontal],
   /// or a [Column] otherwise ([Axis.vertical])
-  Widget _applyWidgetDirection(List<Widget> Function(double) children, BoxConstraints constraits) {
+  Widget _applyWidgetDirection(
+      List<Widget> Function(double) children, BoxConstraints constraits) {
     if (direction == Axis.horizontal) {
       // If horizontal indicator, then use a Row
       return Row(
@@ -282,31 +286,44 @@ class TTStepProgressIndicator extends StatelessWidget {
 
   /// As much space as possible when size not unbounded, otherwise use fallbackLength.
   /// If indicator is in the opposite direction, then use size
-  double _sizeOrMaxLength(bool isCorrectDirection, double maxLength) => isCorrectDirection
-      // If space is not unbounded, then fill it with the indicator
-      ? maxLength != double.infinity
-          ? double.infinity
-          : fallbackLength
-      : maxDefinedSize;
+  double _sizeOrMaxLength(bool isCorrectDirection, double maxLength) =>
+      isCorrectDirection
+          // If space is not unbounded, then fill it with the indicator
+          ? maxLength != double.infinity
+              ? double.infinity
+              : fallbackLength
+          : maxDefinedSize;
 
   /// Draw just two containers in case no specific step setting is required
   /// i.e. it becomes a linear progress indicator with two steps: selected and unselected
-  bool get _isOptimizable => padding == 0 && customColor == null && customStep == null && customSize == null && onTap == null;
+  bool get _isOptimizable =>
+      padding == 0 &&
+      customColor == null &&
+      customStep == null &&
+      customSize == null &&
+      onTap == null;
 
   /// Compute single step length, based on total length available
-  double _stepHeightOrWidthValue(double maxSize) => (_maxHeightOrWidthValue(maxSize) - (padding * 2 * totalSteps)) / totalSteps;
+  double _stepHeightOrWidthValue(double maxSize) =>
+      (_maxHeightOrWidthValue(maxSize) - (padding * 2 * totalSteps)) /
+      totalSteps;
 
   /// Total length (horizontal or vertical) available for the indicator
-  double _maxHeightOrWidthValue(double maxSize) => maxSize != double.infinity ? maxSize : fallbackLength;
+  double _maxHeightOrWidthValue(double maxSize) =>
+      maxSize != double.infinity ? maxSize : fallbackLength;
 
   /// Choose what [Color] to assign
   /// given current [step] index (zero-based)
   Color _chooseStepColor(int step, int stepIndex) {
     // Compute id given step is unselected or not
-    final isUnselectedStepColor = progressDirection == TextDirection.ltr ? step > currentStep : step < totalSteps - currentStep;
+    final isUnselectedStepColor = progressDirection == TextDirection.ltr
+        ? step > currentStep
+        : step < totalSteps - currentStep;
 
     // Override all the other color options when gradient is defined
-    if (gradientColor != null || (isUnselectedStepColor && unselectedGradientColor != null) || (!isUnselectedStepColor && selectedGradientColor != null)) {
+    if (gradientColor != null ||
+        (isUnselectedStepColor && unselectedGradientColor != null) ||
+        (!isUnselectedStepColor && selectedGradientColor != null)) {
       return Colors.white;
     }
 
@@ -324,7 +341,11 @@ class TTStepProgressIndicator extends StatelessWidget {
   }
 
   /// `true` if color of the step given index is [selectedColor]
-  bool _isSelectedColor(int step) => customColor == null && !(progressDirection == TextDirection.ltr ? step > currentStep : step < totalSteps - currentStep);
+  bool _isSelectedColor(int step) =>
+      customColor == null &&
+      !(progressDirection == TextDirection.ltr
+          ? step > currentStep
+          : step < totalSteps - currentStep);
 
   /// Build only two steps when the condition of [_isOptimizable] is verified
   List<Widget> _buildOptimizedSteps(double indicatorLength) {
@@ -336,8 +357,10 @@ class TTStepProgressIndicator extends StatelessWidget {
     final secondStepLength = indicatorLength - firstStepLength;
 
     // Choose gradient based on direction defined
-    final firstStepGradient = isLtr ? selectedGradientColor : unselectedGradientColor;
-    final secondStepGradient = !isLtr ? selectedGradientColor : unselectedGradientColor;
+    final firstStepGradient =
+        isLtr ? selectedGradientColor : unselectedGradientColor;
+    final secondStepGradient =
+        !isLtr ? selectedGradientColor : unselectedGradientColor;
 
     // Add first step
     stepList.add(
@@ -443,7 +466,8 @@ class TTStepProgressIndicator extends StatelessWidget {
         color: stepColor,
         width: isHorizontal ? stepLength : stepSize,
         height: !isHorizontal ? stepLength : stepSize,
-        customStep: customStep != null ? customStep!(step, stepColor, stepSize) : null,
+        customStep:
+            customStep != null ? customStep!(step, stepColor, stepSize) : null,
         onTap: onTap != null ? onTap!(step) : null,
         isFirstStep: step == 0,
         isLastStep: step == totalSteps - 1,

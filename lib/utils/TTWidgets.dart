@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share/share.dart';
 import 'package:tiktok/utils/TTColors.dart';
@@ -22,7 +22,15 @@ class PinEntryTextField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
 
-  PinEntryTextField({this.lastPin, this.fields: 4, this.onSubmit, this.fieldWidth: 40.0, this.fontSize: 16.0, this.isTextObscure: false, this.showFieldAsBox: false}) : assert(fields > 0);
+  PinEntryTextField(
+      {this.lastPin,
+      this.fields: 4,
+      this.onSubmit,
+      this.fieldWidth: 40.0,
+      this.fontSize: 16.0,
+      this.isTextObscure: false,
+      this.showFieldAsBox: false})
+      : assert(fields > 0);
 
   @override
   State createState() {
@@ -42,7 +50,8 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
     super.initState();
     _pin = List<String?>.filled(widget.fields, null, growable: false);
     _focusNodes = List<FocusNode?>.filled(widget.fields, null, growable: false);
-    _textControllers = List<TextEditingController?>.filled(widget.fields, null, growable: false);
+    _textControllers = List<TextEditingController?>.filled(widget.fields, null,
+        growable: false);
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       setState(() {
         if (widget.lastPin != null) {
@@ -70,11 +79,15 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
       FocusScope.of(context).requestFocus(_focusNodes[0]);
     }
 
-    return Row(mainAxisAlignment: MainAxisAlignment.center, verticalDirection: VerticalDirection.down, children: textFields);
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        verticalDirection: VerticalDirection.down,
+        children: textFields);
   }
 
   void clearTextFields() {
-    _textControllers.forEach((TextEditingController? tEditController) => tEditController!.clear());
+    _textControllers.forEach(
+        (TextEditingController? tEditController) => tEditController!.clear());
     _pin.clear();
   }
 
@@ -109,9 +122,18 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
         obscureText: widget.isTextObscure,
         decoration: InputDecoration(
             counterText: "",
-            enabledBorder: widget.showFieldAsBox ? new OutlineInputBorder(borderSide: BorderSide(width: 2.0, color: Colors.white24)) : null,
-            focusedBorder: widget.showFieldAsBox ? new OutlineInputBorder(borderSide: BorderSide(width: 2.0, color: TTColorRed)) : null,
-            border: widget.showFieldAsBox ? new OutlineInputBorder(borderSide: BorderSide(width: 2.0, color: Colors.white24)) : null),
+            enabledBorder: widget.showFieldAsBox
+                ? new OutlineInputBorder(
+                    borderSide: BorderSide(width: 2.0, color: Colors.white24))
+                : null,
+            focusedBorder: widget.showFieldAsBox
+                ? new OutlineInputBorder(
+                    borderSide: BorderSide(width: 2.0, color: TTColorRed))
+                : null,
+            border: widget.showFieldAsBox
+                ? new OutlineInputBorder(
+                    borderSide: BorderSide(width: 2.0, color: Colors.white24))
+                : null),
         onChanged: (String str) {
           setState(() {
             _pin[i] = str;
@@ -148,7 +170,11 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
   }
 }
 
-Widget ttAppBar(BuildContext context, String title, {List<Widget>? actions, bool showBack = true, Color color = black, Color? iconColor = white}) {
+Widget ttAppBar(BuildContext context, String title,
+    {List<Widget>? actions,
+    bool showBack = true,
+    Color color = black,
+    Color? iconColor = white}) {
   return AppBar(
     automaticallyImplyLeading: false,
     backgroundColor: color,
@@ -161,12 +187,14 @@ Widget ttAppBar(BuildContext context, String title, {List<Widget>? actions, bool
             icon: Icon(Icons.arrow_back_ios, color: iconColor ?? null),
           )
         : null,
-    title: Text(title, style: boldTextStyle(color: white, size: 18), maxLines: 1),
+    title:
+        Text(title, style: boldTextStyle(color: white, size: 18), maxLines: 1),
     actions: actions,
   );
 }
 
-Container ttEditTextStyle(var hintText, {var keyboardType = TextInputType.text}) {
+Container ttEditTextStyle(var hintText,
+    {var keyboardType = TextInputType.text}) {
   return Container(
     child: TextFormField(
       style: primaryTextStyle(size: 16, color: Colors.white54),
@@ -179,18 +207,27 @@ Container ttEditTextStyle(var hintText, {var keyboardType = TextInputType.text})
           size: 14,
         ),
         labelStyle: primaryTextStyle(color: Colors.white54),
-        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)),
-        focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)),
-        border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)),
+        enabledBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)),
+        focusedBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)),
+        border:
+            UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)),
       ),
     ),
   );
 }
 
-BoxDecoration boxDecoration({double radius = 2, Color color = Colors.transparent, Color? bgColor, var showShadow = false}) {
+BoxDecoration boxDecoration(
+    {double radius = 2,
+    Color color = Colors.transparent,
+    Color? bgColor,
+    var showShadow = false}) {
   return BoxDecoration(
     color: bgColor ?? Colors.white,
-    boxShadow: showShadow ? defaultBoxShadow(shadowColor: shadowColorGlobal) : [BoxShadow(color: Colors.transparent)],
+    boxShadow: showShadow
+        ? defaultBoxShadow(shadowColor: shadowColorGlobal)
+        : [BoxShadow(color: Colors.transparent)],
     border: Border.all(color: color),
     borderRadius: BorderRadius.all(Radius.circular(radius)),
   );
@@ -198,18 +235,24 @@ BoxDecoration boxDecoration({double radius = 2, Color color = Colors.transparent
 
 void onShareTap(BuildContext context) async {
   final RenderBox box = context.findRenderObject() as RenderBox;
-  Share.share(TTAppName, subject: '', sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
+  Share.share(TTAppName,
+      subject: '',
+      sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
 }
 
-Function(BuildContext, String) placeholderWidgetFn() => (_, s) => placeholderWidget();
+Function(BuildContext, String) placeholderWidgetFn() =>
+    (_, s) => placeholderWidget();
 
-Widget placeholderWidget() => Image.asset('images/cloneApp/app/placeholder.jpg', fit: BoxFit.cover);
+Widget placeholderWidget() =>
+    Image.asset('images/cloneApp/app/placeholder.jpg', fit: BoxFit.cover);
 
-Widget commonCacheImageWidget(String? url, {double? width, BoxFit? fit, double? height}) {
+Widget commonCacheImageWidget(String? url,
+    {double? width, BoxFit? fit, double? height}) {
   if (url!.validate().startsWith('http')) {
     if (isMobile) {
       return CachedNetworkImage(
-        placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+        placeholder:
+            placeholderWidgetFn() as Widget Function(BuildContext, String)?,
         imageUrl: '$url',
         height: height,
         width: width,

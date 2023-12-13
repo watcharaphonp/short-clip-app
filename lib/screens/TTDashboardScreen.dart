@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/screens/TTAddPostScreen.dart';
@@ -60,9 +60,19 @@ class TTDashboardScreenState extends State<TTDashboardScreen> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: selectedIndex == pos ? white : white.withOpacity(0.7), size: 30).center(),
+            Icon(icon,
+                    color:
+                        selectedIndex == pos ? white : white.withOpacity(0.7),
+                    size: 30)
+                .center(),
             4.height,
-            selectedIndex == pos ? Container(decoration: boxDecorationWithShadow(borderRadius: radius(10), backgroundColor: white), height: 3, width: 25) : SizedBox()
+            selectedIndex == pos
+                ? Container(
+                    decoration: boxDecorationWithShadow(
+                        borderRadius: radius(10), backgroundColor: white),
+                    height: 3,
+                    width: 25)
+                : SizedBox()
           ],
         ),
       );
@@ -103,20 +113,28 @@ class TTDashboardScreenState extends State<TTDashboardScreen> {
               alignment: Alignment.centerLeft,
               child: Container(
                 width: 28,
-                decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)), color: TTColorSerpent),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomLeft: Radius.circular(10)),
+                    color: TTColorSerpent),
               ),
             ),
             Align(
               alignment: Alignment.centerRight,
               child: Container(
                 width: 28,
-                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: TTColorRed),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: TTColorRed),
               ),
             ),
             Center(
               child: Container(
                 width: 28,
-                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: white),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: white),
                 child: Center(child: Icon(Icons.add, color: black)),
               ),
             )

@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/model/TTModel.dart';
 import 'package:tiktok/utils/TTColors.dart';
@@ -40,7 +40,11 @@ class TTSoundScreenState extends State<TTSoundScreen> {
     return Scaffold(
       backgroundColor: black,
       appBar: ttAppBar(context, "", actions: [
-        Transform(alignment: Alignment.center, transform: Matrix4.rotationY(math.pi), child: Icon(Icons.reply, size: 35, color: white)).onTap(() {
+        Transform(
+                alignment: Alignment.center,
+                transform: Matrix4.rotationY(math.pi),
+                child: Icon(Icons.reply, size: 35, color: white))
+            .onTap(() {
           toast("Share");
         }),
       ]) as PreferredSizeWidget?,
@@ -63,9 +67,11 @@ class TTSoundScreenState extends State<TTSoundScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Original sound by(@lee)", style: primaryTextStyle(color: white)),
+                  Text("Original sound by(@lee)",
+                      style: primaryTextStyle(color: white)),
                   Text("@lee", style: primaryTextStyle(color: white)),
-                  Text("Uploaded by: @lee", style: secondaryTextStyle(color: white)),
+                  Text("Uploaded by: @lee",
+                      style: secondaryTextStyle(color: white)),
                 ],
               )
             ],
@@ -85,7 +91,9 @@ class TTSoundScreenState extends State<TTSoundScreen> {
                   Container(
                     height: 200,
                     width: context.width(),
-                    child: FittedBox(child: commonCacheImageWidget(mData.post), fit: BoxFit.fill),
+                    child: FittedBox(
+                        child: commonCacheImageWidget(mData.post),
+                        fit: BoxFit.fill),
                   ),
                   Container(
                     padding: EdgeInsets.only(bottom: 8, left: 8, right: 16),
@@ -94,11 +102,22 @@ class TTSoundScreenState extends State<TTSoundScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          children: [Icon(Icons.favorite_border, color: white, size: 16), 4.width, Text(mData.like, style: primaryTextStyle(color: white))],
+                          children: [
+                            Icon(Icons.favorite_border, color: white, size: 16),
+                            4.width,
+                            Text(mData.like,
+                                style: primaryTextStyle(color: white))
+                          ],
                         ),
                         Container(
-                          decoration: BoxDecoration(shape: BoxShape.circle, color: black, border: Border.all(color: white, width: 1)),
-                          child: CircleAvatar(radius: 10, backgroundColor: black, backgroundImage: AssetImage(mData.user)),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: black,
+                              border: Border.all(color: white, width: 1)),
+                          child: CircleAvatar(
+                              radius: 10,
+                              backgroundColor: black,
+                              backgroundImage: AssetImage(mData.user)),
                         )
                       ],
                     ),
@@ -108,7 +127,11 @@ class TTSoundScreenState extends State<TTSoundScreen> {
                 TTStoryScreen().launch(context);
               });
             },
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 2.0, crossAxisSpacing: 2.0, childAspectRatio: 1.2),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 2.0,
+                crossAxisSpacing: 2.0,
+                childAspectRatio: 1.2),
           )
         ],
       )),

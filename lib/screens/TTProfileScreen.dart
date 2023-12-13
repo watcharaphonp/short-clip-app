@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;;
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:tiktok/components/TTProfileComponent.dart';
 import 'package:tiktok/screens/TTEditProfileScreen.dart';
@@ -71,8 +71,12 @@ class TTProfileScreenState extends State<TTProfileScreen> {
             },
             itemBuilder: (context) {
               List<PopupMenuEntry<Object>> list = [];
-              list.add(PopupMenuItem(child: Text("Settings", style: primaryTextStyle()), value: 'setting'));
-              list.add(PopupMenuItem(child: Text("Edit Profile", style: primaryTextStyle()), value: 'profile'));
+              list.add(PopupMenuItem(
+                  child: Text("Settings", style: primaryTextStyle()),
+                  value: 'setting'));
+              list.add(PopupMenuItem(
+                  child: Text("Edit Profile", style: primaryTextStyle()),
+                  value: 'profile'));
               return list;
             },
           )
@@ -81,7 +85,8 @@ class TTProfileScreenState extends State<TTProfileScreen> {
             mobile: DefaultTabController(
           length: 2,
           child: NestedScrollView(
-            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
               return [
                 SliverAppBar(
                   expandedHeight: 320.0,
@@ -91,7 +96,10 @@ class TTProfileScreenState extends State<TTProfileScreen> {
                   automaticallyImplyLeading: false,
                   bottom: TabBar(
                     indicatorColor: Colors.blueAccent,
-                    tabs: [Tab(icon: Icon(Icons.grid_on, color: white)), Tab(icon: Icon(Icons.favorite_border, color: white))],
+                    tabs: [
+                      Tab(icon: Icon(Icons.grid_on, color: white)),
+                      Tab(icon: Icon(Icons.favorite_border, color: white))
+                    ],
                   ),
                   flexibleSpace: FlexibleSpaceBar(
                     collapseMode: CollapseMode.parallax,
@@ -99,9 +107,13 @@ class TTProfileScreenState extends State<TTProfileScreen> {
                       child: Column(
                         children: <Widget>[
                           8.height,
-                          CircleAvatar(backgroundImage: AssetImage(TT_ic_guest8), radius: 35).center(),
+                          CircleAvatar(
+                                  backgroundImage: AssetImage(TT_ic_guest8),
+                                  radius: 35)
+                              .center(),
                           10.height,
-                          Text("@Lee_", style: boldTextStyle(size: 18, color: white)),
+                          Text("@Lee_",
+                              style: boldTextStyle(size: 18, color: white)),
                           20.height,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -121,9 +133,14 @@ class TTProfileScreenState extends State<TTProfileScreen> {
                             children: [
                               widget.isUser!
                                   ? Container(
-                                      padding: EdgeInsets.fromLTRB(30, 8, 30, 8),
-                                      decoration: BoxDecoration(border: Border.all(color: Colors.white24)),
-                                      child: Text("Message", style: primaryTextStyle(color: white)),
+                                      padding:
+                                          EdgeInsets.fromLTRB(30, 8, 30, 8),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.white24)),
+                                      child: Text("Message",
+                                          style:
+                                              primaryTextStyle(color: white)),
                                     )
                                   : MaterialButton(
                                       onPressed: () {
@@ -131,14 +148,36 @@ class TTProfileScreenState extends State<TTProfileScreen> {
                                           isSelected = !isSelected;
                                         });
                                       },
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                                      color: isSelected ? Colors.grey : TTColorRed,
-                                      child: Text(isSelected ? 'Following' : 'Follow', style: primaryTextStyle(color: white, size: 14)),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(4)),
+                                      color:
+                                          isSelected ? Colors.grey : TTColorRed,
+                                      child: Text(
+                                          isSelected ? 'Following' : 'Follow',
+                                          style: primaryTextStyle(
+                                              color: white, size: 14)),
                                     ),
                               8.width,
-                              widget.isUser! ? Container(padding: EdgeInsets.all(6), decoration: BoxDecoration(border: Border.all(color: Colors.white24)), child: Icon(Icons.person_add_rounded, color: white)) : SizedBox(),
+                              widget.isUser!
+                                  ? Container(
+                                      padding: EdgeInsets.all(6),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.white24)),
+                                      child: Icon(Icons.person_add_rounded,
+                                          color: white))
+                                  : SizedBox(),
                               8.width,
-                              widget.isUser! ? Container(padding: EdgeInsets.all(6), decoration: BoxDecoration(border: Border.all(color: Colors.white24)), child: Icon(Icons.videocam_rounded, color: white)) : SizedBox()
+                              widget.isUser!
+                                  ? Container(
+                                      padding: EdgeInsets.all(6),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.white24)),
+                                      child: Icon(Icons.videocam_rounded,
+                                          color: white))
+                                  : SizedBox()
                             ],
                           ),
                         ],
